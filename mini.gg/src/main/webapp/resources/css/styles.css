@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #5383e8; /* 네비게이션 배경색과 동일하게 설정 */
+}
+
+.banner {
+    background-color: black; /* 검정색 배너 */
+    height: 50px; /* 배너 높이 */
+    width: 100%; /* 전체 너비 */
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+    padding-left: 20px; /* 왼쪽 여백 */
+    color: white; /* 글자 색상 */
+    font-size: 25px; /* 글자 크기 */
+    font-weight: bold;
+}
+
+header {
+    background: #5383e8; /* 지정된 색상 */
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 2.5px solid rgba(255, 255, 255, 0.2); /* 아래에 얇은 회색 구분선 추가 */
+}
+
+nav {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 공간 분배 */
+}
+
+.left-nav,
+.right-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 가로 정렬 */
+}
+
+.left-nav li,
+.right-nav li {
+    margin: 0 15px; /* 항목 간 간격 */
+    font-size: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* 글씨 두껍게 */
+}
+
+nav a:hover {
+    color: #ffcc00; /* 마우스 오버 시 글씨 색상 변경 */
+}
+
+nav li::after {
+    content: ''; /* 아래 줄을 위한 가상 요소 */
+    display: block;
+    width: 100%; /* 전체 너비 */
+    height: 2px; /* 줄 두께 */
+    background-color: white; /* 줄 색상 */
+    position: absolute; /* 절대 위치 */
+    left: 0; /* 왼쪽 정렬 */
+    bottom: -5px; /* 항목 아래에 위치 */
+    transform: scaleX(0); /* 초기 상태에서 줄 숨김 */
+    transition: transform 0.3s; /* 줄 전환 효과 */
+}
+
+nav li:hover::after {
+    transform: scaleX(1); /* 마우스 오버 시 줄 표시 */
+}
+
+/* 검색창 스타일 */
+#search {
+    display: flex; /* 플렉스 박스 사용 */
+    flex-direction: column; /* 세로 정렬 */
+    justify-content: flex-start; /* 위쪽 정렬 */
+    align-items: center; /* 가로 가운데 정렬 */
+    height: calc(100vh - 100px); /* 화면 전체 높이에서 배너 높이 제외 */
+    margin-top: 20px; /* 전체 섹션 위쪽 여백 추가 */
+}
+
+#image-container {
+    margin-bottom: 20px; /* 이미지와 검색창 간의 여백 */
+}
+
+#search input {
+    padding: 15px; /* 패딩 증가 */
+    width: 300px; /* 너비 증가 */
+    border: 1px solid #ccc; /* 경계선 색상 */
+    border-radius: 5px; /* 둥글게 */
+    font-size: 18px; /* 글자 크기 증가 */
+    outline: none; /* 포커스 시 외곽선 제거 */
+    transition: border-color 0.3s; /* 경계선 색상 전환 효과 */
+}
+
+#search input:focus {
+    border-color: #3498db; /* 포커스 시 경계선 색상 변경 */
+}
+
+#search button {
+    padding: 15px; /* 패딩 증가 */
+    margin-top: 10px; /* 위쪽 여백 추가 */
+    background-color: #3498db; /* 버튼 배경색 */
+    color: white;
+    border: none;
+    border-radius: 5px; /* 둥글게 */
+    cursor: pointer; /* 커서 모양 변경 */
+    font-size: 18px; /* 글자 크기 증가 */
+}
+
+#search button:hover {
+    background-color: #2980b9; /* 버튼 마우스 오버 시 색상 */
+}
+
+#results {
+    margin: 20px;
+    text-align: center;
+}

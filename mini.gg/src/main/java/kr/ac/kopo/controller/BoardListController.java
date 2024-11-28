@@ -16,10 +16,9 @@ public class BoardListController implements Controller {
 	}
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		List<BoardVO> boardList = boardService.searchAllBoard();
-		request.setAttribute("boardList", boardList);
+		//List<BoardVO> boardList = boardService.searchAllBoard();
+		//request.setAttribute("boardList", boardList);
 		
 		return "/jsp/board/list.jsp";
 	}
-
 }

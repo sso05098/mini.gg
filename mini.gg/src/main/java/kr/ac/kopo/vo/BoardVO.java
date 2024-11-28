@@ -19,6 +19,8 @@ public class BoardVO {
 		this.regDate = regDate;
 	}
 	
+	
+	
 	public int getNo() {
 		return no;
 	}
